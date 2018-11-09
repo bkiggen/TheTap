@@ -1,8 +1,14 @@
 import React from 'react';
 
+const addStyles = {
+  width: '450px',
+  margin: '0 auto'
+};
+
+
 function AddBeer() {
   return (
-    <div>
+    <div style={addStyles}>
     <h1>Add New Beer</h1>
       <input placeholder="Beer Name: "></input>
       <input placeholder="Brewery: "></input>

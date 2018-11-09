@@ -41,6 +41,8 @@ function Header(){
   
   return (
     <div style={containerStyles}>
+    <Link to='/'>Home</Link>
+    <span> | </span>
       <Link to='/Admin'>Admin</Link>
       <div style={headerStyles}>
         <img src={barrels} style={imageStyles}/>
