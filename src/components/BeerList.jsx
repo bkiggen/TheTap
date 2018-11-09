@@ -56,11 +56,12 @@ const  masterKegList = [
 const beerListStyles = {
   width: '80%',
   maxWidth: '1024px', 
-  border: '1px solid black',
+  minWidth: '400px',
   margin: '0 auto',
   display: 'flex',
   flexWrap: 'wrap',
-  alignItems: 'center'
+  alignItems: 'center',
+  justifyContent: 'center'
 };
 function BeerList() {
   return (

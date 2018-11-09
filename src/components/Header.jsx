@@ -1,19 +1,24 @@
 import React from 'react';
 import barrels from '../assets/img/barrelicon.png';
+import { Link } from 'react-router-dom';
 
 function Header(){
 
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const dateNow = new Date();
   
+  const containerStyles = {
+    backgroundColor: 'white'
+  };
+  
   const headerStyles = {
-    fontFamily: 'Montserrat',
     textAlign: 'center',
     width: '100%',
     height: '300px',
-    marginTop: '0px'
+    marginTop: '0px',
+    backgroundColor: 'white'
   };
-
+  
   const imageStyles = {
     height: '60px',
     width: '60px',
@@ -35,13 +40,16 @@ function Header(){
   };
   
   return (
-    <div style={headerStyles}>
-      <img src={barrels} style={imageStyles}/>
-      <h1 style={h1Styles}>Mr. Cooper's</h1>
-      <hr style={hrStyles}/>
-      <h1 style={tapListStyles}>Tap List</h1>
-      <hr style={hrStyles}/>
-      <h3 style={h1Styles}>  {dateNow.toLocaleDateString('en-Us', options)}</h3>
+    <div style={containerStyles}>
+      <Link to='/Admin'>Admin</Link>
+      <div style={headerStyles}>
+        <img src={barrels} style={imageStyles}/>
+        <h1 style={h1Styles}>Mr. Cooper's</h1>
+        <hr style={hrStyles}/>
+        <h1 style={tapListStyles}>Tap List</h1>
+        <hr style={hrStyles}/>
+        <h3 style={h1Styles}>  {dateNow.toLocaleDateString('en-Us', options)}</h3>
+      </div>
     </div>
   );
 }

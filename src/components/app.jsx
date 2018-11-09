@@ -2,16 +2,20 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import BeerList from './BeerList';
-import AddBeer from './AddBeer';
+import Admin from './Admin';
 import Error404 from './Error404';
+
+const mainStyles = {
+  fontFamily: 'Montserrat'
+};
 
 function App(){
   return(
-    <div>
+    <div style={mainStyles}>
       <Header/>
       <Switch>
         <Route exact path='/' component={BeerList}/>
-        <Route path='/add' component={AddBeer}/>
+        <Route path='/admin' component={Admin}/>
         <Route component={Error404}/>
       </Switch>
     </div>
