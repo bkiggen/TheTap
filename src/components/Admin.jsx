@@ -9,7 +9,7 @@ const containerStyles = {
   width: '80%',
   margin: '0 auto',
   flexWrap: 'wrap'
-}
+};
 
 function Admin() {
   return (

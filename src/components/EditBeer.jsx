@@ -4,7 +4,7 @@ import React from 'react';
 const editStyles = {
   width: '450px',
   margin: '0 auto'
-}
+};
 
 function EditBeer() {
   return (
@@ -16,7 +16,7 @@ function EditBeer() {
       <input placeholder="Pints Remaining in Keg: "></input>
       <input placeholder="Beer Color: "></input>
     </div>
-  )
+  );
 }
 
 export default EditBeer;
