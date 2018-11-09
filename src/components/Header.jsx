@@ -12,21 +12,31 @@ function Header(){
     width: '100%',
     height: '200px',
     marginTop: '0px'
-  };
+  }
+
   const imageStyles = {
     height: '60px',
     width: '60px',
-    marginTop: '50px'
+    marginTop: '20px'
   }
+  
   const h1Styles = {
-    margin: '0px'
+    margin: '5px'
+  }
+  
+  const hrStyles = {
+    width: '200px',
+    margin: '0 auto'
   }
   
   return (
     <div style={headerStyles}>
       <img src={barrels} style={imageStyles}/>
       <h1 style={h1Styles}>Mr. Cooper's</h1>
-      <h3 style={h1Styles}> Tap List: {dateNow.toLocaleDateString('en-Us', options)}</h3>
+      <hr style={hrStyles}/>
+      <h1 style={h1Styles}>Tap List</h1>
+      <hr style={hrStyles}/>
+      <h3 style={h1Styles}>  {dateNow.toLocaleDateString('en-Us', options)}</h3>
     </div>
   );
 }
