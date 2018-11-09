@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import BeerList from './BeerList';
+import AddBeer from './AddBeer';
 import Error404 from './Error404';
 
 function App(){
