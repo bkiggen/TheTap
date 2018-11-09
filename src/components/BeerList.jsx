@@ -7,56 +7,56 @@ const  masterKegList = [
     beerName: 'Ruby Zozzle',
     brand: 'Hi-Wheel',
     color: 'Sparkling Wine & Grapefruit',
-    abv: '6.8%',
-    price: '7',
-    status: '20'
+    abv: 6.8,
+    price: 7,
+    status: 20
   },
   {
     beerName: 'Tart N Juicy',
     brand: 'Epic',
     color: 'Sour IPA',
-    abv: '4.5%',
-    price: '6',
-    status: '60'
+    abv: 4.5,
+    price: 6,
+    status: 60
   },
   {
     beerName: 'Hamm\'s',
     brand: 'Miller/Coors',
     color: 'American Lager',
-    abv: '4.7%',
-    price: '3',
-    status: '65'
+    abv: 4.7,
+    price: 3,
+    status: 65
   },
   {
     beerName: 'Prismatic',
     brand: 'Ninkasi',
     color: 'Juicy IPA',
-    abv:  '5.9%',
-    price: '6',
-    status: '75'
+    abv:  5.9,
+    price: 6,
+    status: 75
   },
   {
     beerName: 'Juicy Haze',
     brand: 'New Belgium',
     color: 'India Pale Ale',
-    abv:  '7.5%',
-    price: '6',
-    status: '18'
+    abv:  7.5,
+    price: 6,
+    status: 18
   },
   {
     beerName: '8 Hop',
     brand: 'New Belgium',
     color: 'Pale Ale',
-    abv:  '5.5%',
-    price: '6',
-    status: '58'
+    abv:  5.5,
+    price: 6,
+    status: 58
   }
 ];
 
 const beerListStyles = {
   width: '80%',
+  maxWidth: '1024px', 
   border: '1px solid black',
-  height: '100vh',
   margin: '0 auto',
   display: 'flex',
   flexWrap: 'wrap',
