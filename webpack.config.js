@@ -33,6 +33,16 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
+        enforce: "pre",
+        loader: "eslint-loader",
+        exclude: /node_modules/,
+        options: {
+          emitWarning: true,
+          configFile: "./.eslintrc.json"
+        }
+      },
+      {
+        test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
         options: {
@@ -45,25 +55,8 @@ module.exports = {
             "styled-jsx/babel"
           ]
         }
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          "babel-loader",
-          {
-            loader: "react-svg-loader",
-            options: {
-              svgo: {
-                plugins: [
-                  { removeTitle: false }
-                ],
-                floatPrecision: 2
-              }
-            }
-          }
-        ]
       }
-    ],
+    ]
   },
 
   plugins: [
@@ -72,7 +65,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'The Tap',
+      title: 'React Help Queue',
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ]
