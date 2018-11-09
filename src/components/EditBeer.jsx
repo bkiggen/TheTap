@@ -1,9 +1,9 @@
 import React from 'react';
 
-function AddBeer() {
+function EditBeer() {
   return (
     <div>
-    <h1>Add New Beer</h1>
+      <h1>Edit Beer</h1>
       <input placeholder="Beer Name: "></input>
       <input placeholder="Brewery: "></input>
       <input placeholder="Price: "></input>
@@ -13,4 +13,4 @@ function AddBeer() {
   )
 }
 
-export default AddBeer;
+export default EditBeer;

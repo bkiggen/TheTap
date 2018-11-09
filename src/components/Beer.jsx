@@ -9,7 +9,8 @@ const containerStyles = {
   display: 'flex',
   justifyContent: 'space-between',
   margin: '0 auto',
-  margin: '5px'
+  margin: '5px',
+  padding: '5px'
 };
 
 const beerInfoStyles = {
@@ -57,7 +58,7 @@ function Beer(props){
         <h2>{props.beerName}</h2>
         <h3>{props.brand}</h3>
         <p>Price: ${props.price}</p>
-        <p>ABV: {props.abv}</p>
+        <p>ABV: {props.abv}%</p>
         <p>Pints Remaning: {props.status}</p>
       </div>
       <div style={graphicContainerStyles}>
@@ -75,13 +76,23 @@ function Beer(props){
           </div>
         </div>
         <div style={beerButtonStyles}>
-          <button type="button" name="button">Edit</button>
+          <button className="button" type="button" name="button">Edit</button>
           <button className="button" type="button" name="button">Sell Pint</button>
         </div>
       </div>
       <style jsx>{`
         .button {
           margin-left: 5px;
+          border-radius: 5px;
+          background-color: white;
+          outline: none;
+          border: 1px solid black;
+          padding: 6px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .button:hover {
+          background-color: whitesmoke;
         }
         svg {
           z-index: 1;
