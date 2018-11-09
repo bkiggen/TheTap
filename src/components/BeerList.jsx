@@ -6,7 +6,7 @@ const  masterKegList = [
   {
     beerName: 'Ruby Zozzle',
     brand: 'Hi-Wheel',
-    color: 'Sparkling Wine & Grapefruit',
+    color: '#FF8C15',
     abv: 6.8,
     price: 7,
     status: 20
@@ -14,7 +14,7 @@ const  masterKegList = [
   {
     beerName: 'Tart N Juicy',
     brand: 'Epic',
-    color: 'Sour IPA',
+    color: '#44110E',
     abv: 4.5,
     price: 6,
     status: 60
@@ -22,7 +22,7 @@ const  masterKegList = [
   {
     beerName: 'Hamm\'s',
     brand: 'Miller/Coors',
-    color: 'American Lager',
+    color: '#FF8C15',
     abv: 4.7,
     price: 3,
     status: 65
@@ -30,7 +30,7 @@ const  masterKegList = [
   {
     beerName: 'Prismatic',
     brand: 'Ninkasi',
-    color: 'Juicy IPA',
+    color: '#F2B749',
     abv:  5.9,
     price: 6,
     status: 75
@@ -38,7 +38,7 @@ const  masterKegList = [
   {
     beerName: 'Juicy Haze',
     brand: 'New Belgium',
-    color: 'India Pale Ale',
+    color: '#F2B749',
     abv:  7.5,
     price: 6,
     status: 18
@@ -46,7 +46,7 @@ const  masterKegList = [
   {
     beerName: '8 Hop',
     brand: 'New Belgium',
-    color: 'Pale Ale',
+    color: '#44110E',
     abv:  5.5,
     price: 6,
     status: 58

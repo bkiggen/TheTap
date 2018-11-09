@@ -7,6 +7,7 @@ const containerStyles = {
   border: '1px solid black',
   display: 'flex',
   justifyContent: 'space-between',
+  margin: '0 auto',
   margin: '5px'
 };
 
@@ -36,16 +37,17 @@ const beerButtonStyles = {
   width: '165px'
 };
 
-function liquidStyles(props) {
+function liquidStyles(status, beerColor) {
   const style = {
     width: '155px',
-    height: (props.status), 
-    backgroundColor: props.color,
+    height: (status * 1.5), 
+    backgroundColor: beerColor,
     position: 'absolute',
     transform: 'translateY(-10px)'
   };
   return(style);
 }
+
 
 function Beer(props){
   return (
@@ -68,7 +70,7 @@ function Beer(props){
               </g>
             </g>
           </svg>
-          <div style={liquidStyles(props)}>
+          <div style={liquidStyles(props.status, props.color)}>
           </div>
         </div>
         <div style={beerButtonStyles}>
@@ -94,7 +96,7 @@ Beer.propTypes = {
   price: PropTypes.number,
   abv: PropTypes.number,
   status: PropTypes.number,
-  color: PropTypes.color
+  color: PropTypes.string
 };
 
 
