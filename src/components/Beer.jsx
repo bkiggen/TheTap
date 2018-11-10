@@ -5,7 +5,6 @@ const containerStyles = {
   height: '250px',
   width: '40%',
   minWidth: '400px',
-  border: '1px solid black',
   display: 'flex',
   justifyContent: 'space-between',
   margin: '0 auto',

@@ -40,68 +40,58 @@ function Header(){
   };
   
   return (
-    <div className="dropdown">
-      <div>
-        <div className="dropbutton">
-        X
-        </div>
-        <style jsx>{`
-          .dropbutton {
-              background-color: #4CAF50;
-              color: white;
-              padding: 16px;
-              font-size: 16px;
-              border: none;
-          }
-          
-          .dropdown {
-              position: relative;
-              display: inline-block;
-          }
-
-          .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f1f1f1;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-          }
-          
-          .dropdown-content .link {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-          }
-
-          .dropdown-content  .link:hover {background-color: #ddd;}
-          
-          .dropdown:hover  .dropdown-content {display: block;}
-    
-          .dropdown:hover .dropbutton {background-color: #3e8e41;}
-          
-          `}</style>
-        <div className="dropdown-content">
-          <div className="link">
-            <Link to='/'>Home</Link>
-          </div>
-          <div className="link">
-            <Link to='/Admin'>Admin</Link>
-            <div>
-            </div>
-          </div>
+    <div>
+        
+      <div className="dropdown">
+        <button className="dropButton">O</button>
+        <div className="dropdownContent">
+          <div className='links'><Link to='/'>Home</Link></div>
+          <div className='links'><Link to='/admin'>Admin</Link></div>
         </div>
       </div>
-          <div style={headerStyles}>
-            <img src={barrels} style={imageStyles}/>
-            <h1 style={h1Styles}>Mr. Cooper's</h1>
-            <hr style={hrStyles}/>
-            <h1 style={tapListStyles}>Tap List</h1>
-            <hr style={hrStyles}/>
-            <h3 style={h1Styles}>  {dateNow.toLocaleDateString('en-Us', options)}</h3>
-          </div>
-        </div>
+        
+      <style jsx>{`
+        .dropButton {
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            background-color: white;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdownContent {
+            display: none;
+            position: absolute;
+            background-color: white;
+            width: 70px;
+            z-index: 1;
+        }
+
+        .dropdownContent div .links {
+            text-decoration: none;
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdownContent {
+          display: block;
+        }
+          `}</style>
+      <div style={headerStyles}>
+        <img src={barrels} style={imageStyles}/>
+        <h1 style={h1Styles}>Mr. Cooper's</h1>
+        <hr style={hrStyles}/>
+        <h1 style={tapListStyles}>Tap List</h1>
+        <hr style={hrStyles}/>
+        <h3 style={h1Styles}>  {dateNow.toLocaleDateString('en-Us', options)}</h3>
+      </div>
+    </div>
   );
 }
 
