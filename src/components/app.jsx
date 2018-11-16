@@ -16,6 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      editKeg: false,
       masterKegList: [
         {
           beerName: 'Ruby Zozzle',
@@ -74,8 +75,11 @@ class App extends React.Component {
       <div style={mainStyles}>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList} />} />
-          <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList} />} />
+          <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
+            editKeg={this.state.editKeg}
+          />} />
+          <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
+            editKeg={this.state.editKeg} />} />
           <Route component={Error404}/>
         </Switch>
       </div>

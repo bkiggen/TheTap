@@ -52,7 +52,17 @@ function liquidStyles(status, beerColor) {
 }
 
 
+
+
 function Beer(props){
+  console.log(props.editKeg);
+  let editDecidedContent = null;
+  if(props.editKeg == true){
+    editDecidedContent =           <button className="button" type="button" name="button">Edit</button>;
+  } else {
+    editDecidedContent = null;
+  }
+  
   return (
     <div style={containerStyles}>
       <div style={beerInfoStyles}>
@@ -77,7 +87,7 @@ function Beer(props){
           </div>
         </div>
         <div style={beerButtonStyles}>
-          <button className="button" type="button" name="button">Edit</button>
+          {editDecidedContent}
           <button className="button" type="button" name="button">Sell Pint</button>
         </div>
       </div>

@@ -13,7 +13,7 @@ const beerListStyles = {
   justifyContent: 'center'
 };
 
-function BeerList({ masterKegList }) {
+function BeerList({ masterKegList, editKeg }) {
   return (
     <div style={beerListStyles}>
       {masterKegList.map((keg, index) =>
@@ -23,7 +23,9 @@ function BeerList({ masterKegList }) {
           abv={keg.abv}
           price={keg.price}
           status={keg.status}
-          key={index} />
+          key={index}
+          editKeg={editKeg}
+        />
       )}
     </div>
   );

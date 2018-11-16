@@ -11,11 +11,13 @@ const containerStyles = {
   flexWrap: 'wrap'
 };
 
-function Admin({ masterKegList }) {
+function Admin({ masterKegList, editKeg }) {
   return (
     <div style={containerStyles}>
       <AddBeer/>
-      <EditBeer masterKegList={masterKegList}/>
+      <EditBeer masterKegList={masterKegList}
+        editKeg={editKeg}
+      />
     </div>
   );
 }

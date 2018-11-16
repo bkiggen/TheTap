@@ -12,11 +12,13 @@ const padding = {
   padding: '5px'
 };
 
-function EditBeer( { masterKegList }) {
+function EditBeer( { masterKegList, editKeg }) {
   return (
     <div style={editStyles}>
-      <h1>Edit Existing Keg</h1>
-      <BeerList masterKegList={masterKegList}/>
+      <h1><em>Edit</em> Existing Keg</h1>
+      <BeerList masterKegList={masterKegList}
+        editKeg={editKeg}
+      />
     </div>
   );
 }
