@@ -43,6 +43,7 @@ function Header(){
         <img src={beer} className="dropButton"/>
         <div className="dropdownContent">
           <div className='links'><Link style={{textDecoration: 'none', color: 'black'}} to='/'>Home</Link></div>
+          <br/>
           <div className='links'><Link style={{textDecoration: 'none', color: 'black'}} to='/admin'>Admin</Link></div>
         </div>
       </div>
