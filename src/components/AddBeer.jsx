@@ -16,6 +16,7 @@ const padding = {
 };
 
 
+
 function AddBeer() {
   return (
     <div style={addStyles}>
@@ -29,7 +30,6 @@ function AddBeer() {
         <button>Add Keg to List</button>
         <style jsx>{`
           button {
-            margin-left: 5px;
             border-radius: 5px;
             background-color: white;
             outline: none;
@@ -37,8 +37,8 @@ function AddBeer() {
             padding: 6px;
             padding-left: 10px;
             padding-right: 10px;
-            margin-left: 7px;
             width: 172px;
+            margin: 8px;
           }
           .button:hover {
             background-color: whitesmoke;

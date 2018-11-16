@@ -77,7 +77,7 @@ function Beer(props){
   } else {
     editDecidedContent =     <button style={buttonStyles}>Sell Pint</button>;
   }
-  console.log(props.editKegStatus);
+  
   return (
     <div style={containerStyles}>
       <div style={beerInfoStyles}>

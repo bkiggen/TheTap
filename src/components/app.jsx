@@ -9,9 +9,6 @@ const mainStyles = {
   fontFamily: 'Montserrat'
 };
 
-
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -68,10 +65,28 @@ class App extends React.Component {
       ]
     };
   }
+  
+  handleSellPint(key) {
+    // console.log(this.state.masterKegList[key].status) 
+    
+    let newStatus = JSON.parse(JSON.stringify(this.state.masterLevelList));
+    
+    let newSlice = newStatus[key].status - 1;
+    
+    newStatus[key].status = newSlice;
+    
+    newStatus -= newStatus;
+    this.setState({
+      masterKegList: newStatus
+    })
+    
+    console.log(this.state.masterKegList[key].status)
+  }
 
   render(){
     return(
       <div style={mainStyles}>
+        <h1 onClick={this.handleSellPint(0)}>test</h1>
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
