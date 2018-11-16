@@ -34,7 +34,7 @@ function BeerList({ masterKegList, editKegStatus }) {
 
 Beer.propTypes = {
   masterKegList: PropTypes.array,
-  editKegStatus: PropTypes.boolean
+  editKegStatus: PropTypes.bool
 };
 
 export default BeerList;

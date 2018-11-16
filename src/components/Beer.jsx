@@ -120,7 +120,7 @@ Beer.propTypes = {
   abv: PropTypes.number,
   status: PropTypes.number,
   color: PropTypes.string,
-  editKegStatus: PropTypes.boolean
+  editKegStatus: PropTypes.bool
 };
 
 

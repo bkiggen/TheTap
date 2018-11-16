@@ -1,6 +1,6 @@
 import React from 'react';
 import BeerList from './BeerList';
-import PropTypes from './PropTypes';
+import PropTypes from 'prop-types';
 
 const editStyles = {
   width: '450px',
@@ -22,7 +22,7 @@ function EditBeer( { masterKegList, editKegStatus }) {
 
 EditBeer.PropTypes = {
   masterKegList: PropTypes.array,
-  editKegStatus: PropTypes.boolean
+  editKegStatus: PropTypes.bool
 };
 
 export default EditBeer;
