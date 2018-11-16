@@ -1,5 +1,6 @@
 import React from 'react';
 import barrels from '../assets/img/barrelicon.png';
+import beer from '../assets/img/beer-svg.png';
 import { Link } from 'react-router-dom';
 
 function Header(){
@@ -43,10 +44,10 @@ function Header(){
     <div>
         
       <div className="dropdown">
-        <button className="dropButton">O</button>
+        <img src={beer} className="dropButton"/>
         <div className="dropdownContent">
-          <div className='links'><Link to='/'>Home</Link></div>
-          <div className='links'><Link to='/admin'>Admin</Link></div>
+          <div className='links'><Link style={{textDecoration: 'none', color: 'black'}} to='/'>Home</Link></div>
+          <div className='links'><Link style={{textDecoration: 'none', color: 'black'}} to='/admin'>Admin</Link></div>
         </div>
       </div>
         
@@ -56,7 +57,8 @@ function Header(){
             padding: 16px;
             font-size: 16px;
             border: none;
-            background-color: white;
+            height: 20px;
+            width: 20px;
         }
 
         .dropdown {

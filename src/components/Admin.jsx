@@ -1,5 +1,4 @@
 import React from 'react';
-import BeerList from './BeerList';
 import AddBeer from './AddBeer';
 import EditBeer from './EditBeer';
 
@@ -11,7 +10,7 @@ const containerStyles = {
   flexWrap: 'wrap'
 };
 
-function Admin() {
+function Admin({ masterKegList }) {
   return (
     <div style={containerStyles}>
       <AddBeer/>
