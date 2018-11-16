@@ -14,7 +14,6 @@ const beerListStyles = {
 };
 
 function BeerList({ masterKegList, editKegStatus }) {
-  console.log(editKegStatus);
   return (
     <div style={beerListStyles}>
       {masterKegList.map((keg, index) =>

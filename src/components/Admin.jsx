@@ -17,7 +17,7 @@ function Admin({ masterKegList, editKegStatus }) {
     <div style={containerStyles}>
       <AddBeer/>
       <EditBeer      masterKegList={masterKegList}
-        editKegStatus={editKegStatus}
+      editKegStatus='true'
       />
     </div>
   );

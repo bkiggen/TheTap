@@ -9,10 +9,6 @@ function Header({ onToggleEditButton }){
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const dateNow = new Date();
   
-  const containerStyles = {
-    backgroundColor: 'white'
-  };
-  
   const headerStyles = {
     textAlign: 'center',
     width: '100%',
