@@ -41,6 +41,21 @@ const beerButtonStyles = {
   width: '165px'
 };
 
+const buttonStyles = {
+  marginLeft: '5px',
+  borderRadius: '5px',
+  backgroundColor: 'white',
+  outline: 'none',
+  border: '1px solid black',
+  padding: '6px',
+  paddingLeft: '10px',
+  paddingRight: '10px',
+};
+
+const svgStyles = {
+  zIndex: '1' 
+};
+
 function liquidStyles(status, beerColor) {
   const style = {
     width: '155px',
@@ -58,11 +73,11 @@ function liquidStyles(status, beerColor) {
 function Beer(props){
   let editDecidedContent = null;
   if(props.editKegStatus == 'true'){
-    editDecidedContent =           <button className="button" type="button" name="button">Edit</button>;
+    editDecidedContent =           <button style={buttonStyles}>Edit</button>;
   } else {
     editDecidedContent = null;
   }
-  console.log(props.editKegStatus)
+  console.log(props.editKegStatus);
   return (
     <div style={containerStyles}>
       <div style={beerInfoStyles}>
@@ -74,7 +89,7 @@ function Beer(props){
       </div>
       <div style={graphicContainerStyles}>
         <div style={beerGraphicStyles}>
-          <svg width="175px" height="200px" viewBox="0 0 245 291" version="1.1" >
+          <svg style={svgStyles} width="175px" height="200px" viewBox="0 0 245 291" version="1.1" >
             <defs></defs>
             <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g id="Group" fill="#000000" stroke="#000000">
@@ -88,27 +103,9 @@ function Beer(props){
         </div>
         <div style={beerButtonStyles}>
           {editDecidedContent}
-          <button className="button" type="button" name="button">Sell Pint</button>
+          <button style={buttonStyles}>Sell Pint</button>
         </div>
       </div>
-      <style jsx>{`
-        .button {
-          margin-left: 5px;
-          border-radius: 5px;
-          background-color: white;
-          outline: none;
-          border: 1px solid black;
-          padding: 6px;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        .button:hover {
-          background-color: whitesmoke;
-        }
-        svg {
-          z-index: 1;
-        }
-        `}</style>
     </div>
   );
 }

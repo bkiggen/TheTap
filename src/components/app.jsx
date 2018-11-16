@@ -72,10 +72,10 @@ class App extends React.Component {
   render(){
     return(
       <div style={mainStyles}>
-        <Header onToggleEditButton={this.handleToggleEditButton}/>
+        <Header/>
         <Switch>
           <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
-          editKegStatus='false'
+            editKegStatus='false'
           />} />
           <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
           />} />

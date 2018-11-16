@@ -14,7 +14,7 @@ function EditBeer( { masterKegList, editKegStatus }) {
     <div style={editStyles}>
       <h1><em>Edit</em> Existing Keg</h1>
       <BeerList masterKegList={masterKegList}
-      editKegStatus='true'
+        editKegStatus='true'
       />
     </div>
   );
