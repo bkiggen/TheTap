@@ -2,8 +2,9 @@ import React from 'react';
 import barrels from '../assets/img/barrelicon.png';
 import beer from '../assets/img/beer-svg.png';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
-function Header(){
+function Header({ onToggleEditButton }){
 
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const dateNow = new Date();
@@ -39,15 +40,14 @@ function Header(){
     fontStyle: 'italic',
     margin: '5px'
   };
-  
+
   return (
     <div>
-        
       <div className="dropdown">
         <img src={beer} className="dropButton"/>
         <div className="dropdownContent">
-          <div className='links'><Link style={{textDecoration: 'none', color: 'black'}} to='/'>Home</Link></div>
-          <div className='links'><Link style={{textDecoration: 'none', color: 'black'}} to='/admin'>Admin</Link></div>
+          <div className='links'  onClick={() => onToggleEditButton(false)}><Link style={{textDecoration: 'none', color: 'black'}} to='/'>Home</Link></div>
+          <div className='links'  onClick={() => onToggleEditButton(true)}><Link style={{textDecoration: 'none', color: 'black'}} to='/admin'>Admin</Link></div>
         </div>
       </div>
         
@@ -96,5 +96,11 @@ function Header(){
     </div>
   );
 }
+
+
+Header.propTypes = {
+  onToggleEditButton: PropTypes.func
+};
+
 
 export default Header;

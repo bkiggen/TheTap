@@ -16,7 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editKeg: false,
+      editKegStatus: true,
       masterKegList: [
         {
           beerName: 'Ruby Zozzle',
@@ -68,18 +68,28 @@ class App extends React.Component {
         }
       ]
     };
+    this.handleToggleEditButton = this.handleToggleEditButton.bind(this);
+  }
+  
+  handleToggleEditButton( editBool ){
+    let newEditKegStatus = this.state.editKegStatus;
+    newEditKegStatus = editBool;
+    this.setState({
+      editKegStatus: newEditKegStatus
+    })
+    console.log(this.state.editKegStatus)
   }
   
   render(){
     return(
       <div style={mainStyles}>
-        <Header/>
+        <Header onToggleEditButton={this.handleToggleEditButton}/>
         <Switch>
           <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
-            editKeg={this.state.editKeg}
+          editKegStatus={this.state.editKegStatus}
           />} />
           <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
-            editKeg={this.state.editKeg} />} />
+            editKegStatus={this.state.editKegStatus} />} />
           <Route component={Error404}/>
         </Switch>
       </div>
