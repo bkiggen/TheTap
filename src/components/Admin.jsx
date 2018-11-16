@@ -2,6 +2,7 @@ import React from 'react';
 import AddBeer from './AddBeer';
 import EditBeer from './EditBeer';
 
+
 const containerStyles = {
   display: 'flex',
   justifyContent: 'center',
@@ -14,7 +15,7 @@ function Admin({ masterKegList }) {
   return (
     <div style={containerStyles}>
       <AddBeer/>
-      <EditBeer/>
+      <EditBeer masterKegList={masterKegList}/>
     </div>
   );
 }
