@@ -76,8 +76,8 @@ class App extends React.Component {
     newEditKegStatus = editBool;
     this.setState({
       editKegStatus: newEditKegStatus
-    })
-    console.log(this.state.editKegStatus)
+    });
+    console.log(this.state.editKegStatus);
   }
   
   render(){
@@ -86,7 +86,7 @@ class App extends React.Component {
         <Header onToggleEditButton={this.handleToggleEditButton}/>
         <Switch>
           <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
-          editKegStatus={this.state.editKegStatus}
+            editKegStatus={this.state.editKegStatus}
           />} />
           <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
             editKegStatus={this.state.editKegStatus} />} />
@@ -96,5 +96,6 @@ class App extends React.Component {
     );
   }  
 }
+
 
 export default App;

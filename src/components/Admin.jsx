@@ -1,6 +1,7 @@
 import React from 'react';
 import AddBeer from './AddBeer';
 import EditBeer from './EditBeer';
+import PropTypes from './PropTypes';
 
 
 const containerStyles = {
@@ -15,11 +16,17 @@ function Admin({ masterKegList, editKegStatus }) {
   return (
     <div style={containerStyles}>
       <AddBeer/>
-      <EditBeer masterKegList={masterKegList}
+      <EditBeer      masterKegList={masterKegList}
         editKegStatus={editKegStatus}
       />
     </div>
   );
 }
+
+Admin.PropTypes = {
+  masterKegList: PropTypes.array,
+  editKegStatus: PropTypes.boolean
+};
+
 
 export default Admin;

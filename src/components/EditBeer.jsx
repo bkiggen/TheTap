@@ -1,5 +1,6 @@
 import React from 'react';
 import BeerList from './BeerList';
+import PropTypes from './PropTypes';
 
 const editStyles = {
   width: '450px',
@@ -7,10 +8,6 @@ const editStyles = {
   textAlign: 'center'
 };
 
-const padding = {
-  margin: '5px',
-  padding: '5px'
-};
 
 function EditBeer( { masterKegList, editKegStatus }) {
   return (
@@ -22,5 +19,10 @@ function EditBeer( { masterKegList, editKegStatus }) {
     </div>
   );
 }
+
+EditBeer.PropTypes = {
+  masterKegList: PropTypes.array,
+  editKegStatus: PropTypes.boolean
+};
 
 export default EditBeer;

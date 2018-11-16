@@ -8,16 +8,11 @@ const addStyles = {
 };
 
 const padding = {
-  margin: '5px',
   padding: '5px',
   border: 'none',
   outline: 'none',
   borderBottom: '1px solid black',
   margin: '8px'
-};
-
-const buttonStyles = {
-  border: '1px solid black'
 };
 
 

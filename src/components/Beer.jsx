@@ -7,7 +7,8 @@ const containerStyles = {
   minWidth: '400px',
   display: 'flex',
   justifyContent: 'space-between',
-  margin: '0 auto',
+  marginLeft: 'auto',
+  marginRight: 'auto',
   margin: '5px',
   padding: '5px',
   border: '2px solid black',
@@ -55,14 +56,13 @@ function liquidStyles(status, beerColor) {
 
 
 function Beer(props){
-  console.log(props.editKegStatus)
   let editDecidedContent = null;
   if(props.editKegStatus == true){
     editDecidedContent =           <button className="button" type="button" name="button">Edit</button>;
   } else {
     editDecidedContent = null;
   }
-  
+  // console.log(props.editKegStatus)
   return (
     <div style={containerStyles}>
       <div style={beerInfoStyles}>
@@ -119,7 +119,8 @@ Beer.propTypes = {
   price: PropTypes.number,
   abv: PropTypes.number,
   status: PropTypes.number,
-  color: PropTypes.string
+  color: PropTypes.string,
+  editKegStatus: PropTypes.boolean
 };
 
 
