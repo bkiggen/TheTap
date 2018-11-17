@@ -67,7 +67,6 @@ class App extends React.Component {
   }
   
   handleSellPint(key) {
-    
     let newStatus = JSON.parse(JSON.stringify(this.state.masterKegList));
 
     let newSlice = newStatus[key].status - 1;
@@ -77,6 +76,12 @@ class App extends React.Component {
     this.setState({
       masterKegList: newStatus
     })
+    
+    //to be passed down
+  }
+  
+  handleEditKeg(key) {
+    //to be written and passed down
   }
 
   render(){
@@ -86,9 +91,11 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
-            editKegStatus='false'
+          editKegStatus='false'
+          onButtonClick={handleSellPint}
           />} />
           <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
+          onButtonClick={handleEditKeg}
           />} />
           <Route component={Error404}/>
         </Switch>
