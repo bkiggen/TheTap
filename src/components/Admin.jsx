@@ -12,7 +12,7 @@ const containerStyles = {
   flexWrap: 'wrap'
 };
 
-function Admin({ masterKegList, editKegStatus }) {
+function Admin({ masterKegList }) {
   return (
     <div style={containerStyles}>
       <AddBeer/>
@@ -24,8 +24,7 @@ function Admin({ masterKegList, editKegStatus }) {
 }
 
 Admin.PropTypes = {
-  masterKegList: PropTypes.array,
-  editKegStatus: PropTypes.bool
+  masterKegList: PropTypes.array
 };
 
 

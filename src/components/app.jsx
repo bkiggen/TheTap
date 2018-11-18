@@ -75,27 +75,26 @@ class App extends React.Component {
     
     this.setState({
       masterKegList: newStatus
-    })
-    
+    });
+    this.state.masterKegList[key].status;
     //to be passed down
   }
   
-  handleEditKeg(key) {
-    //to be written and passed down
-  }
+  // handleEditKeg(key) {
+  //   //to be written and passed down
+  // }
 
   render(){
     return(
       <div style={mainStyles}>
-        <h1 onClick={()=> this.handleSellPint(0)}>test</h1>
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
-          editKegStatus='false'
-          onButtonClick={handleSellPint}
+            editKegStatus='false'
+            onButtonClick={this.handleSellPint}
           />} />
           <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
-          onButtonClick={handleEditKeg}
+            onButtonClick={this.handleEditKeg}
           />} />
           <Route component={Error404}/>
         </Switch>
