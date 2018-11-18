@@ -64,6 +64,7 @@ class App extends React.Component {
         }
       ]
     };
+    this.handleSellPint = this.handleSellPint.bind(this);
   }
   
   handleSellPint(key) {
@@ -71,6 +72,7 @@ class App extends React.Component {
 
     let newSlice = newStatus[key].status - 1;
     
+    console.log(newSlice)
     newStatus[key].status = newSlice;
     
     this.setState({

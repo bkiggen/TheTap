@@ -23,6 +23,7 @@ function BeerList({ masterKegList, editKegStatus, onButtonClick }) {
           abv={keg.abv}
           price={keg.price}
           status={keg.status}
+          index={index}
           key={index}
           editKegStatus={editKegStatus}
           onButtonClick={onButtonClick}

@@ -75,7 +75,7 @@ function Beer(props){
   if(props.editKegStatus == 'true'){
     editDecidedContent =           <button style={buttonStyles}>Edit Keg Info</button>;
   } else {
-    editDecidedContent = <button style={buttonStyles} onClick={props.onButtonClick}
+    editDecidedContent = <button style={buttonStyles} onClick={()=> props.onButtonClick(props.index)}
     >Sell Pint</button>;
   }
   
