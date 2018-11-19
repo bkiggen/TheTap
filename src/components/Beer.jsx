@@ -53,13 +53,13 @@ const buttonStyles = {
 };
 
 const svgStyles = {
-  zIndex: '1' 
+  zIndex: '1'
 };
 
 function liquidStyles(status, beerColor) {
   const style = {
     width: '155px',
-    height: (status * 1.5), 
+    height: (status * 1.5),
     backgroundColor: beerColor,
     position: 'absolute',
     transform: 'translateY(-10px)'
@@ -78,7 +78,7 @@ function Beer(props){
     editDecidedContent = <button style={buttonStyles} onClick={()=> props.onButtonClick(props.index)}
     >Sell Pint</button>;
   }
-  
+
   return (
     <div style={containerStyles}>
       <div style={beerInfoStyles}>
@@ -110,17 +110,16 @@ function Beer(props){
   );
 }
 
-Beer.propTypes = {
-  beerName: PropTypes.string,
-  brand: PropTypes.string,
-  price: PropTypes.number,
-  abv: PropTypes.number,
-  status: PropTypes.number,
-  color: PropTypes.string,
-  editKegStatus: PropTypes.string,
-  onButtonClick: PropTypes.func
-};
+// Beer.propTypes = {
+//   beerName: PropTypes.string,
+//   brand: PropTypes.string,
+//   price: PropTypes.number,
+//   abv: PropTypes.number,
+//   status: PropTypes.number,
+//   color: PropTypes.string,
+//   editKegStatus: PropTypes.string,
+//   onButtonClick: PropTypes.func
+// };
 
 
 export default Beer;
-

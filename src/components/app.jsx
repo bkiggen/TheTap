@@ -65,23 +65,26 @@ class App extends React.Component {
       ]
     };
     this.handleSellPint = this.handleSellPint.bind(this);
+    this.handleAddBeer = this.handleAddBeer.bind(this);
   }
-  
+
   handleSellPint(key) {
     let newStatus = JSON.parse(JSON.stringify(this.state.masterKegList));
-
     let newSlice = newStatus[key].status - 1;
-    
-    console.log(newSlice)
     newStatus[key].status = newSlice;
-    
     this.setState({
       masterKegList: newStatus
     });
     this.state.masterKegList[key].status;
-    //to be passed down
   }
-  
+
+  handleAddBeer(newBeer) {
+    console.log(newBeer);
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.push(newBeer);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
   // handleEditKeg(key) {
   //   //to be written and passed down
   // }
@@ -96,13 +99,14 @@ class App extends React.Component {
             onButtonClick={this.handleSellPint}
           />} />
           <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
+          onAddBeer={this.handleAddBeer}
             onButtonClick={this.handleEditKeg}
           />} />
           <Route component={Error404}/>
         </Switch>
       </div>
     );
-  }  
+  }
 }
 
 

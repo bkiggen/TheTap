@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const addStyles = {
   width: '450px',
@@ -17,17 +18,69 @@ const padding = {
 
 
 
-function AddBeer() {
+
+function AddBeer({onAddBeer}) {
+  let _name = null;
+  let _brewery = null;
+  let _price = null;
+  let _abv = null;
+  let _color = null;
+  let _status = null;
+
+  function handleAddBeer(event) {
+    event.preventDefault();
+    onAddBeer({name: _name.value, brewery: _brewery.value,  color: _color.value, abv: _abv.value, price: _price.value, status: _status.value});
+
+    _name.value = '';
+    _brewery.value = '';
+    _price.value = '';
+    _abv.value = '';
+    _color.value = '';
+    _status.value = '';
+  }
   return (
     <div style={addStyles}>
       <h1><em>Add</em> New Keg</h1>
       <div>
-        <input style={padding} placeholder="Beer Name: "></input>
-        <input style={padding} placeholder="Brewery: "></input>
-        <input style={padding} placeholder="Price: "></input>
-        <input style={padding} placeholder="Pints Remaining in Keg: "></input>
-        <input style={padding} placeholder="Beer Color: "></input>
-        <button>Add Keg to List</button>
+        <form onSubmit={handleAddBeer}>
+          <input
+            type='text'
+            id='name'
+            style={padding} placeholder="Beer Name:"
+            ref={(input) => {_name = input;}}
+          ></input>
+          <input
+            type="text"
+            id='brewery'
+            style={padding} placeholder="Brewery: "
+            ref={(input) => {_brewery = input;}}
+          ></input>
+          <input
+            type='text'
+            id='price'
+            style={padding}  placeholder="Price: "
+            ref={(input) => {_price = input;}}
+          ></input>
+          <input
+            type='text'
+            id='abv'
+            style={padding}  placeholder="ABV: "
+            ref={(input) => {_abv = input;}}
+          ></input>
+          <input
+            type='text'
+            id='status'
+            style={padding} placeholder="Pints Remaining in Keg: "
+            ref={(input) => {_status = input;}}
+          ></input>
+          <input
+            type='text'
+            id='color'
+            style={padding} placeholder="Beer Color: "
+            ref={(input) => {_color = input;}}
+          ></input>
+          <button type="submit">Add Keg to List</button>
+        </form>
         <style jsx>{`
           button {
             border-radius: 5px;
@@ -38,7 +91,7 @@ function AddBeer() {
             padding-left: 10px;
             padding-right: 10px;
             width: 172px;
-            margin: 8px;
+            margin: 25px;
           }
           .button:hover {
             background-color: whitesmoke;
@@ -50,6 +103,10 @@ function AddBeer() {
       </div>
     </div>
   );
+}
+
+AddBeer.PropTypes = {
+  onAddBeer: PropTypes.func
 }
 
 export default AddBeer;
