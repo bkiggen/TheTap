@@ -110,16 +110,16 @@ function Beer(props){
   );
 }
 
-// Beer.propTypes = {
-//   beerName: PropTypes.string,
-//   brand: PropTypes.string,
-//   price: PropTypes.number,
-//   abv: PropTypes.number,
-//   status: PropTypes.number,
-//   color: PropTypes.string,
-//   editKegStatus: PropTypes.string,
-//   onButtonClick: PropTypes.func
-// };
+Beer.propTypes = {
+  beerName: PropTypes.string,
+  brand: PropTypes.string,
+  price: PropTypes.number,
+  abv: PropTypes.number,
+  status: PropTypes.number,
+  color: PropTypes.string,
+  editKegStatus: PropTypes.string,
+  onButtonClick: PropTypes.func
+};
 
 
 export default Beer;

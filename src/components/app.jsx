@@ -79,10 +79,10 @@ class App extends React.Component {
   }
 
   handleAddBeer(newBeer) {
-    console.log(newBeer);
     let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newBeer);
     this.setState({masterKegList: newMasterKegList});
+    console.log(this.state.masterKegList);
   }
 
   // handleEditKeg(key) {

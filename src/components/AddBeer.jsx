@@ -22,20 +22,20 @@ const padding = {
 function AddBeer({onAddBeer}) {
   let _name = null;
   let _brewery = null;
-  let _price = null;
-  let _abv = null;
   let _color = null;
+  let _abv = null;
+  let _price = null;
   let _status = null;
 
   function handleAddBeer(event) {
     event.preventDefault();
-    onAddBeer({name: _name.value, brewery: _brewery.value,  color: _color.value, abv: _abv.value, price: _price.value, status: _status.value});
+    onAddBeer({beerName: _name.value, brand: _brewery.value,  color: _color.value, abv: parseInt(_abv.value), price: parseInt(_price.value), status: parseInt(_status.value)});
 
     _name.value = '';
     _brewery.value = '';
-    _price.value = '';
-    _abv.value = '';
     _color.value = '';
+    _abv.value = '';
+    _price.value = '';
     _status.value = '';
   }
   return (
@@ -57,9 +57,9 @@ function AddBeer({onAddBeer}) {
           ></input>
           <input
             type='text'
-            id='price'
-            style={padding}  placeholder="Price: "
-            ref={(input) => {_price = input;}}
+            id='color'
+            style={padding} placeholder="Beer Color: "
+            ref={(input) => {_color = input;}}
           ></input>
           <input
             type='text'
@@ -69,15 +69,15 @@ function AddBeer({onAddBeer}) {
           ></input>
           <input
             type='text'
-            id='status'
-            style={padding} placeholder="Pints Remaining in Keg: "
-            ref={(input) => {_status = input;}}
+            id='price'
+            style={padding}  placeholder="Price: "
+            ref={(input) => {_price = input;}}
           ></input>
           <input
             type='text'
-            id='color'
-            style={padding} placeholder="Beer Color: "
-            ref={(input) => {_color = input;}}
+            id='status'
+            style={padding} placeholder="Pints Remaining in Keg: "
+            ref={(input) => {_status = input;}}
           ></input>
           <button type="submit">Add Keg to List</button>
         </form>
