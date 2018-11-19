@@ -82,7 +82,6 @@ class App extends React.Component {
     let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newBeer);
     this.setState({masterKegList: newMasterKegList});
-    console.log(this.state.masterKegList);
   }
 
   // handleEditKeg(key) {
@@ -99,7 +98,7 @@ class App extends React.Component {
             onButtonClick={this.handleSellPint}
           />} />
           <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
-          onAddBeer={this.handleAddBeer}
+            onAddBeer={this.handleAddBeer}
             onButtonClick={this.handleEditKeg}
           />} />
           <Route component={Error404}/>

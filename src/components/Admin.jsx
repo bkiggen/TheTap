@@ -25,7 +25,7 @@ function Admin({ masterKegList, onAddBeer }) {
   );
 }
 
-Admin.PropTypes = {
+Admin.propTypes = {
   masterKegList: PropTypes.array,
   onAddBeer: PropTypes.func
 };

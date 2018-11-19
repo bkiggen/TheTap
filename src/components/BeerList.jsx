@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const beerListStyles = {
   width: '80%',
-  maxWidth: '1024px', 
+  maxWidth: '1024px',
   minWidth: '400px',
   margin: '0 auto',
   display: 'flex',
@@ -33,13 +33,10 @@ function BeerList({ masterKegList, editKegStatus, onButtonClick }) {
   );
 }
 
-Beer.PropTypes = {
+BeerList.propTypes = {
   masterKegList: PropTypes.array,
-  editKegStatus: PropTypes.bool,
+  editKegStatus: PropTypes.string,
   onButtonClick: PropTypes.func
 };
 
 export default BeerList;
-
-
-

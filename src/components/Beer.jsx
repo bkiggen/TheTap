@@ -118,7 +118,8 @@ Beer.propTypes = {
   status: PropTypes.number,
   color: PropTypes.string,
   editKegStatus: PropTypes.string,
-  onButtonClick: PropTypes.func
+  onButtonClick: PropTypes.func,
+  index: PropTypes.number
 };
 
 

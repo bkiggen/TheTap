@@ -105,8 +105,8 @@ function AddBeer({onAddBeer}) {
   );
 }
 
-AddBeer.PropTypes = {
+AddBeer.propTypes = {
   onAddBeer: PropTypes.func
-}
+};
 
 export default AddBeer;

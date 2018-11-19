@@ -9,7 +9,7 @@ const editStyles = {
 };
 
 
-function EditBeer( { masterKegList, editKegStatus }) {
+function EditBeer( { masterKegList }) {
   return (
     <div style={editStyles}>
       <h1><em>Edit</em> Existing Keg</h1>
@@ -20,9 +20,8 @@ function EditBeer( { masterKegList, editKegStatus }) {
   );
 }
 
-EditBeer.PropTypes = {
-  masterKegList: PropTypes.array,
-  editKegStatus: PropTypes.bool
+EditBeer.propTypes = {
+  masterKegList: PropTypes.array
 };
 
 export default EditBeer;
