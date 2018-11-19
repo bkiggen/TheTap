@@ -13,7 +13,8 @@ const padding = {
   border: 'none',
   outline: 'none',
   borderBottom: '1px solid black',
-  margin: '8px'
+  margin: '8px',
+  width: '150px'
 };
 
 
@@ -57,12 +58,6 @@ function AddBeer({onAddBeer}) {
           ></input>
           <input
             type='text'
-            id='color'
-            style={padding} placeholder="Beer Color: "
-            ref={(input) => {_color = input;}}
-          ></input>
-          <input
-            type='text'
             id='abv'
             style={padding}  placeholder="ABV: "
             ref={(input) => {_abv = input;}}
@@ -79,6 +74,16 @@ function AddBeer({onAddBeer}) {
             style={padding} placeholder="Pints Remaining in Keg: "
             ref={(input) => {_status = input;}}
           ></input>
+          <div style={{ width: '174px', display: 'inline-block', textAlign: 'left'}}>
+            <p style={{display: 'inline', marginLeft: '12px', marginRight: '6px', color: '#757575',
+              fontFamily: 'arial', fontSize: '13.33333px'}}>Color:</p>
+            <input
+              style={{width: '20px'}}
+              type='color'
+              id='color'
+              ref={(input) => {_color = input;}}
+            ></input>
+          </div>
           <button type="submit">Add Keg to List</button>
         </form>
         <style jsx>{`
