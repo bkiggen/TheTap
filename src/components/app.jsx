@@ -70,7 +70,12 @@ class App extends React.Component {
 
   handleSellPint(key) {
     let newStatus = JSON.parse(JSON.stringify(this.state.masterKegList));
-    let newSlice = newStatus[key].status - 1;
+    let newSlice;
+    if (newStatus[key].status >= 1){
+      newSlice = newStatus[key].status - 1;
+    } else {
+      newSlice = 0;
+    }
     newStatus[key].status = newSlice;
     this.setState({
       masterKegList: newStatus
