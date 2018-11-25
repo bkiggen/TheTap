@@ -19,7 +19,8 @@ function Admin({ masterKegList, onAddBeer, currentRouterPath, onEditKeg, selecte
       <AddBeer
         onAddBeer={onAddBeer}
       />
-      <EditBeer      masterKegList={masterKegList}
+      <EditBeer
+        masterKegList={masterKegList}
         selectedBeer={selectedBeer}
         onEditKeg={onEditKeg}
         onUpdateBeer={onUpdateBeer}

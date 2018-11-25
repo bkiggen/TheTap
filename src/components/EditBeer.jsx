@@ -3,7 +3,7 @@ import BeerList from './BeerList';
 import PropTypes from 'prop-types';
 
 const editStyles = {
-  width: '450px',
+  width: '100%',
   margin: '0 auto',
   textAlign: 'center'
 };
@@ -84,7 +84,7 @@ function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, o
               ref={(input) => {_color = input;}}
             ></input>
           </div>
-          <button type="submit">Add Keg to List</button>
+          <button type="submit">Update Keg</button>
         </form>
         <style jsx>{`
           button {
@@ -106,7 +106,7 @@ function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, o
           }
           `}</style>
       </div>
-    </div>
+    </div>;
   }
   return (
     <div style={editStyles}>
