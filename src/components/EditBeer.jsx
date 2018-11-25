@@ -9,19 +9,20 @@ const editStyles = {
 };
 
 
-function EditBeer( { masterKegList }) {
+function EditBeer( { masterKegList, currentRouterPath }) {
   return (
     <div style={editStyles}>
       <h1><em>Edit</em> Existing Keg</h1>
       <BeerList masterKegList={masterKegList}
-        editKegStatus='true'
+        currentRouterPath={currentRouterPath}
       />
     </div>
   );
 }
 
 EditBeer.propTypes = {
-  masterKegList: PropTypes.array
+  masterKegList: PropTypes.array,
+  currentRouterPath: PropTypes.string
 };
 
 export default EditBeer;

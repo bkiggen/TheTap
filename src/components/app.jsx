@@ -62,7 +62,8 @@ class App extends React.Component {
           price: 6,
           status: 58
         }
-      ]
+      ],
+      selectedBeer: null
     };
     this.handleSellPint = this.handleSellPint.bind(this);
     this.handleAddBeer = this.handleAddBeer.bind(this);
@@ -99,10 +100,10 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><BeerList masterKegList={this.state.masterKegList}
-            editKegStatus='false'
             onButtonClick={this.handleSellPint}
           />} />
-          <Route path='/Admin' render={()=><Admin masterKegList={this.state.masterKegList}
+          <Route path='/Admin' render={(props)=><Admin masterKegList={this.state.masterKegList}
+            currentRouterPath={props.location.pathname}
             onAddBeer={this.handleAddBeer}
             onButtonClick={this.handleEditKeg}
           />} />

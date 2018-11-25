@@ -13,7 +13,7 @@ const beerListStyles = {
   justifyContent: 'center'
 };
 
-function BeerList({ masterKegList, editKegStatus, onButtonClick }) {
+function BeerList({ masterKegList, onButtonClick, currentRouterPath }) {
   return (
     <div style={beerListStyles}>
       {masterKegList.map((keg, index) =>
@@ -25,8 +25,8 @@ function BeerList({ masterKegList, editKegStatus, onButtonClick }) {
           status={keg.status}
           index={index}
           key={index}
-          editKegStatus={editKegStatus}
           onButtonClick={onButtonClick}
+          currentRouterPath={currentRouterPath}
         />
       )}
     </div>
@@ -35,8 +35,8 @@ function BeerList({ masterKegList, editKegStatus, onButtonClick }) {
 
 BeerList.propTypes = {
   masterKegList: PropTypes.array,
-  editKegStatus: PropTypes.string,
-  onButtonClick: PropTypes.func
+  onButtonClick: PropTypes.func,
+  currentRouterPath: PropTypes.string
 };
 
 export default BeerList;
