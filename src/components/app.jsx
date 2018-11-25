@@ -68,6 +68,7 @@ class App extends React.Component {
     this.handleSellPint = this.handleSellPint.bind(this);
     this.handleAddBeer = this.handleAddBeer.bind(this);
     this.handleEditKeg = this.handleEditKeg.bind(this);
+    this.handleUpdateBeer = this.handleUpdateBeer.bind(this);
   }
 
   handleSellPint(key) {
@@ -93,7 +94,12 @@ class App extends React.Component {
 
   handleEditKeg(beer) {
     this.setState({selectedBeer: beer});
-    alert('The current keg is ' + this.state.selectedBeer);
+  }
+
+  handleUpdateBeer(updatedBeer) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList[this.state.selectedBeer] = updatedBeer;
+    this.setState({masterKegList: newMasterKegList});
   }
 
   render(){
@@ -105,6 +111,8 @@ class App extends React.Component {
             onButtonClick={this.handleSellPint}
           />} />
           <Route path='/Admin' render={(props)=><Admin masterKegList={this.state.masterKegList}
+            onUpdateBeer={this.handleUpdateBeer}
+            selectedBeer={this.state.selectedBeer}
             onEditKeg={this.handleEditKeg}
             currentRouterPath={props.location.pathname}
             onAddBeer={this.handleAddBeer}

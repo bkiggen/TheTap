@@ -12,7 +12,7 @@ const containerStyles = {
   flexWrap: 'wrap'
 };
 
-function Admin({ masterKegList, onAddBeer, currentRouterPath, onEditKeg }) {
+function Admin({ masterKegList, onAddBeer, currentRouterPath, onEditKeg, selectedBeer, onUpdateBeer }) {
 
   return (
     <div style={containerStyles}>
@@ -20,7 +20,9 @@ function Admin({ masterKegList, onAddBeer, currentRouterPath, onEditKeg }) {
         onAddBeer={onAddBeer}
       />
       <EditBeer      masterKegList={masterKegList}
+        selectedBeer={selectedBeer}
         onEditKeg={onEditKeg}
+        onUpdateBeer={onUpdateBeer}
         currentRouterPath={currentRouterPath}
       />
     </div>
@@ -31,7 +33,9 @@ Admin.propTypes = {
   masterKegList: PropTypes.array,
   onAddBeer: PropTypes.func,
   currentRouterPath: PropTypes.string,
-  onEditKeg: PropTypes.func
+  onEditKeg: PropTypes.func,
+  selectedBeer: PropTypes.number,
+  onUpdateBeer: PropTypes.func
 };
 
 

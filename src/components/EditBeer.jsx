@@ -8,11 +8,110 @@ const editStyles = {
   textAlign: 'center'
 };
 
+const addStyles = {
+  width: '450px',
+  margin: '0 auto',
+  marginBottom: '60px',
+  textAlign: 'center'
+};
 
-function EditBeer( { masterKegList, currentRouterPath, onEditKeg }) {
+const padding = {
+  padding: '5px',
+  border: 'none',
+  outline: 'none',
+  borderBottom: '1px solid black',
+  margin: '8px',
+  width: '150px'
+};
+
+
+
+function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, onUpdateBeer }) {
+  let _name = null;
+  let _brewery = null;
+  let _color = null;
+  let _abv = null;
+  let _price = null;
+  let _status = null;
+
+  function handleUpdateBeer(event) {
+    event.preventDefault();
+    onUpdateBeer({beerName: _name.value, brand: _brewery.value,  color: _color.value, abv: parseInt(_abv.value), price: parseInt(_price.value), status: parseInt(_status.value)});
+  }
+
+  let optionalContent = null;
+  if(selectedBeer !== null){
+    optionalContent = <div style={addStyles}>
+      <div>
+        <form onSubmit={handleUpdateBeer}>
+          <input
+            type='text'
+            id='name'
+            style={padding} defaultValue={masterKegList[selectedBeer].beerName}
+            ref={(input) => {_name = input;}}
+          ></input>
+          <input
+            type="text"
+            id='brewery'
+            style={padding} defaultValue={masterKegList[selectedBeer].brand}
+            ref={(input) => {_brewery = input;}}
+          ></input>
+          <input
+            type='text'
+            id='abv'
+            style={padding}  defaultValue={masterKegList[selectedBeer].abv}
+            ref={(input) => {_abv = input;}}
+          ></input>
+          <input
+            type='text'
+            id='price'
+            style={padding}  defaultValue={masterKegList[selectedBeer].price}
+            ref={(input) => {_price = input;}}
+          ></input>
+          <input
+            type='text'
+            id='status'
+            style={padding} defaultValue={masterKegList[selectedBeer].status}
+            ref={(input) => {_status = input;}}
+          ></input>
+          <div style={{ width: '174px', display: 'inline-block', textAlign: 'left'}}>
+            <p style={{display: 'inline', marginLeft: '12px', marginRight: '6px', color: '#757575',
+              fontFamily: 'arial', fontSize: '13.33333px'}}>Color:</p>
+            <input
+              style={{width: '20px'}}
+              type='color'
+              id='color'
+              ref={(input) => {_color = input;}}
+            ></input>
+          </div>
+          <button type="submit">Add Keg to List</button>
+        </form>
+        <style jsx>{`
+          button {
+            border-radius: 5px;
+            background-color: white;
+            outline: none;
+            border: 1px solid black;
+            padding: 6px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 172px;
+            margin: 25px;
+          }
+          .button:hover {
+            background-color: whitesmoke;
+          }
+          svg {
+            z-index: 1;
+          }
+          `}</style>
+      </div>
+    </div>
+  }
   return (
     <div style={editStyles}>
       <h1><em>Edit</em> Existing Keg</h1>
+      {optionalContent}
       <BeerList masterKegList={masterKegList}
         onEditKeg={onEditKeg}
         currentRouterPath={currentRouterPath}
@@ -24,7 +123,9 @@ function EditBeer( { masterKegList, currentRouterPath, onEditKeg }) {
 EditBeer.propTypes = {
   masterKegList: PropTypes.array,
   currentRouterPath: PropTypes.string,
-  onEditKeg: PropTypes.func
+  onEditKeg: PropTypes.func,
+  selectedBeer: PropTypes.number,
+  onUpdateBeer: PropTypes.func
 };
 
 export default EditBeer;
