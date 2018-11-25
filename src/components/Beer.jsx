@@ -73,7 +73,8 @@ function liquidStyles(status, beerColor) {
 function Beer(props){
   let editDecidedContent = null;
   if(props.currentRouterPath == '/admin'){
-    editDecidedContent =           <button style={buttonStyles}>Edit Keg Info</button>;
+    editDecidedContent =           <button onClick={() => {props.onEditKeg(props.index);}}
+      style={buttonStyles}>Edit Keg Info</button>;
   } else {
     editDecidedContent = <button style={buttonStyles} onClick={()=> props.onButtonClick(props.index)}
     >Sell Pint</button>;
@@ -119,7 +120,8 @@ Beer.propTypes = {
   color: PropTypes.string,
   onButtonClick: PropTypes.func,
   index: PropTypes.number,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onEditKeg: PropTypes.func
 };
 
 
