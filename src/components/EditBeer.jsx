@@ -108,6 +108,8 @@ function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, o
           `}</style>
       </div>
     </div>;
+  } else {
+    optionalContent = "Please select a keg to edit"
   }
   return (
     <div style={editStyles}>
