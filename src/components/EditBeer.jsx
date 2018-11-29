@@ -3,7 +3,7 @@ import BeerList from './BeerList';
 import PropTypes from 'prop-types';
 
 const editStyles = {
-  width: '100%',
+  width: '450px',
   margin: '0 auto',
   textAlign: 'center'
 };
@@ -113,10 +113,6 @@ function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, o
     <div style={editStyles}>
       <h1><em>Edit</em> Existing Keg</h1>
       {optionalContent}
-      <BeerList masterKegList={masterKegList}
-        onEditKeg={onEditKeg}
-        currentRouterPath={currentRouterPath}
-      />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import AddBeer from './AddBeer';
 import EditBeer from './EditBeer';
 import PropTypes from 'prop-types';
+import BeerList from './BeerList';
 
 
 const containerStyles = {
@@ -24,6 +25,10 @@ function Admin({ masterKegList, onAddBeer, currentRouterPath, onEditKeg, selecte
         selectedBeer={selectedBeer}
         onEditKeg={onEditKeg}
         onUpdateBeer={onUpdateBeer}
+        currentRouterPath={currentRouterPath}
+      />
+      <BeerList masterKegList={masterKegList}
+        onEditKeg={onEditKeg}
         currentRouterPath={currentRouterPath}
       />
     </div>
