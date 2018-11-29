@@ -36,7 +36,7 @@ function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, o
 
   function handleUpdateBeer(event) {
     event.preventDefault();
-    onUpdateBeer({beerName: _name.value, brand: _brewery.value,  color: _color.value, abv: parseInt(_abv.value), price: parseInt(_price.value), status: parseInt(_status.value)});
+    onUpdateBeer({beerName: _name.value, brand: _brewery.value,  color: _color.value, abv: parseFloat(_abv.value).toFixed(2), price: parseFloat(_price.value).toFixed(2), status: parseInt(_status.value)});
   }
 
   let optionalContent = null;
