@@ -43,7 +43,7 @@ function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, o
   if(selectedBeer !== null){
     optionalContent = <div style={addStyles}>
       <div>
-        <form onSubmit={handleUpdateBeer}>
+        <form key={masterKegList[selectedBeer].beerName} onSubmit={handleUpdateBeer}>
           <input
             type='text'
             id='name'
@@ -82,6 +82,7 @@ function EditBeer({ masterKegList, currentRouterPath, onEditKeg, selectedBeer, o
               type='color'
               id='color'
               ref={(input) => {_color = input;}}
+              defaultValue={masterKegList[selectedBeer].color}
             ></input>
           </div>
           <button type="submit">Update Keg</button>
