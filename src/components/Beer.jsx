@@ -12,7 +12,8 @@ const containerStyles = {
   margin: '5px',
   padding: '5px',
   border: '2px solid black',
-  borderRadius: '5px'
+  borderRadius: '5px',
+  backgroundColor: 'AliceBlue'
 };
 
 const beerInfoStyles = {
@@ -41,16 +42,20 @@ const beerButtonStyles = {
   width: '165px'
 };
 
-const buttonStyles = {
-  marginLeft: '5px',
-  borderRadius: '5px',
-  backgroundColor: 'white',
-  outline: 'none',
-  border: '1px solid black',
-  padding: '6px',
-  paddingLeft: '10px',
-  paddingRight: '10px',
-};
+let buttonColor = 'white';
+
+function buttonStyles(){
+  return {
+    marginLeft: '5px',
+    borderRadius: '5px',
+    backgroundColor: buttonColor,
+    outline: 'none',
+    border: '1px solid black',
+    padding: '6px',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+  };
+} 
 
 const svgStyles = {
   zIndex: '1'
@@ -72,11 +77,22 @@ function liquidStyles(status, beerColor) {
 
 function Beer(props){
   let editDecidedContent = null;
+
+  function onButtonClick() {
+    props.onButtonClick(props.index)
+    if(props.status <= 10){
+      buttonColor = 'yellow'
+    }
+    if(props.status <= 5){
+      buttonColor = "red"
+    } 
+  }
+
   if(props.currentRouterPath == '/admin'){
     editDecidedContent =           <button onClick={() => {props.onEditKeg(props.index);}}
       style={buttonStyles}>Edit Keg Info</button>;
   } else {
-    editDecidedContent = <button style={buttonStyles} onClick={()=> props.onButtonClick(props.index)}
+    editDecidedContent = <button style={buttonStyles()} onClick={onButtonClick}
     >Sell Pint</button>;
   }
 
